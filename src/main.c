@@ -10,7 +10,11 @@ int main(void) {
     }
 
     show(list);
-    pop(list);
+    // pop(list);
+    // show(list);
+    insert(list, 77, 3);
+    show(list);
+    insert(list, 66, 0);
     show(list);
 
     return 0;

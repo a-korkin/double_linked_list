@@ -17,7 +17,9 @@ typedef struct {
 } llist_t;
 
 llist_t *init(void); 
+node_t *create_node(int value);
 void push(int value, llist_t *list);
+void insert(llist_t *list, int value, int index);
 void show(llist_t *list); 
 void pop(llist_t *list); 
 
