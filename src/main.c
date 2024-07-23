@@ -1,4 +1,5 @@
 #include "list.h"
+#include <stdio.h>
 
 int main(void) {
     llist_t *list = init();
@@ -8,13 +9,18 @@ int main(void) {
         push(value, list);
         fprintf(stdout, "Enter integer value or 'q' for quit: ");
     }
+    show(list);
 
+    pop(list);
+    printf("after pop:\n");
     show(list);
-    // pop(list);
-    // show(list);
+
     insert(list, 77, 3);
+    printf("after insert:\n");
     show(list);
-    insert(list, 66, 0);
+
+    remove_item(list, 3);
+    printf("after remove:\n");
     show(list);
 
     return 0;

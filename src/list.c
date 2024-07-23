@@ -53,6 +53,28 @@ void insert(llist_t *list, int value, int index) {
     list->items++;
 }
 
+void remove_item(llist_t *list, int index) {
+    if (index > list->items) {
+        fprintf(stderr, "ERROR: index out of bounds\n");
+        exit(1);
+    }
+    int i;
+    node_t *node = list->nodes;
+    for (i = 1; i < index; i++) {
+        node = node->next;
+    }
+    if (node->prev && node->next) {
+        node->prev->next = node->next;
+        node->next->prev = node->prev;
+    } else if (node->prev) {
+        node->prev->next = NULL;
+    } else if (node->next) {
+        node->next->prev = NULL;
+    }
+    free(node);
+    list->items--;
+}
+
 void show(llist_t *list) {
     fprintf(stdout, "items: %d\n", list->items);
     node_t *node = list->nodes;

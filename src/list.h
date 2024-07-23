@@ -20,6 +20,7 @@ llist_t *init(void);
 node_t *create_node(int value);
 void push(int value, llist_t *list);
 void insert(llist_t *list, int value, int index);
+void remove_item(llist_t *list, int index);
 void show(llist_t *list); 
 void pop(llist_t *list); 
 
