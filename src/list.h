@@ -1,0 +1,25 @@
+#ifndef __LIST_H
+#define __LIST_H
+
+#include <stdlib.h>
+#include <stdio.h>
+
+typedef struct node {
+    int value;
+    struct node *prev;
+    struct node *next;
+} node_t;
+
+typedef struct {
+    node_t *nodes;
+    node_t *tail;
+    int items;
+} llist_t;
+
+llist_t *init(void); 
+void push(int value, llist_t *list);
+void show(llist_t *list); 
+void pop(llist_t *list); 
+
+#endif // __LIST_H
+
